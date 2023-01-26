@@ -1,1 +1,17 @@
 /* Senha da aula Perrengue */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f3f4fb;
+    font-family: 'Inter', sans-serif;
+    /* font-family: 'Ubuntu', sans-serif; */
+    -webkit-font-feature-smoothing: antialiased;
+}
+
+
+
+.header {}
