@@ -81,3 +81,12 @@ body {
     font-size: 24px;
     margin-top: 30px;
 }
+.current-temperature-info-label{
+    margin-top: 15px;
+    color: #a2a2be;
+}
+.current-temperature-current-temperature{
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 10px;
+}
