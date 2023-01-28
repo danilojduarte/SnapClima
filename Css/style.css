@@ -1,4 +1,4 @@
-/* Senha da aula Perrengue */
+/* Senha da aula Perrengue | Nuca |  */
 * {
     margin: 0;
     padding: 0;
@@ -13,8 +13,12 @@ body {
 
 /* HEADER */
 
-.header {
+.header, 
+.temperature-details, 
+.sunset-sunrise {
     padding: 0 30px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .header-city-search-bar{
@@ -127,7 +131,7 @@ body {
 /* Sun */
 .sunset-sunrise{
     display: flex;
-    margin: 30px 0;
+    margin: 30px auto;
 }
 .sunset-sunrise-item{
     width: 100%;
