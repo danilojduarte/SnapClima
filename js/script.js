@@ -15,6 +15,19 @@ const currentHumidity = document.getElementById('current-humidity');
 const sunriseTime = document.getElementById('sunrise-time');
 const sunsetTime = document.getElementById('sunset-time');
 
+const api_key = "44ca3e95b200a256e74dc9793326ab3c"; 
+
+
 citySearchButton.addEventListener( "click", () => {
-    console.log(citySearchInput.value)
+    let cityName = citySearchInput.value
+    getCityWeather(cityName)
 })
+
+//
+
+function getCityWeather(cityName) {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&lang=pt_br&appid=${api_key}`)
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+}
+
