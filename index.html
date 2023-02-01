@@ -38,26 +38,26 @@
     </header>
 
     <section class="current-temperature">
-        <img class="current-temperature-weather-icon" src="img/loading-icon.svg" aria-hidden="true"
+        <img class="current-temperature-weather-icon" id="weather-icon" src="img/loading-icon.svg" aria-hidden="true"
             alt="Temperatura atual">
-        <div class="current-temperature-description">...</div>
+        <div class="current-temperature-description" id="weather-description">...</div>
         <div class="current-temperature-info-label">Tempo agora</div>
-        <div class="current-temperature-current-temperature">...</div>
+        <div class="current-temperature-current-temperature" id="current-temperature">...</div>
     </section>
 
     <div class="bottom-container">
         <section class="temperature-details">
             <div class="temperature-details-item">
                 <div class="temperature-details-label">Vento</div>
-                <div class="temperature-details-value">...</div>
+                <div class="temperature-details-value" id="wind-speed">...</div>
             </div>
             <div class="temperature-details-item">
                 <div class="temperature-details-label">Sensação</div>
-                <div class="temperature-details-value">...</div>
+                <div class="temperature-details-value" id="feels-like-temeprature">...</div>
             </div>
             <div class="temperature-details-item">
                 <div class="temperature-details-label">Umidade</div>
-                <div class="temperature-details-value">...</div>
+                <div class="temperature-details-value" id="current-humidity">...</div>
             </div>
         </section>
 
@@ -65,12 +65,12 @@
 
             <div class="sunset-sunrise-item">
                 <img class="sunset-sunrise-icon" src="img/sunrise.svg" alt="Nascer do sol">
-                <div class="sunset-sunrise-value">...</div>
+                <div class="sunset-sunrise-value" id="sunrise-time">...</div>
             </div>
 
             <div class="sunset-sunrise-item">
                 <img class="sunset-sunrise-icon" src="img/sunset.svg" alt="Por do sol">
-                <div class="sunset-sunrise-value">...</div>
+                <div class="sunset-sunrise-value" id="sunset-time">...</div>
             </div>
         </section>
     </div>
