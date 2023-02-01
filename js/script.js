@@ -7,7 +7,7 @@ const citySearchButton = document.getElementById('city-search-button');
 const currentDate = document.getElementById('current-date');
 const cityName = document.getElementById('city-name');
 const weatherIcon = document.getElementById('weather-icon');
-const weatherDescritption = document.getElementById('weather-description');
+const weatherDescription = document.getElementById('weather-description');
 const currentTemperature = document.getElementById('current-temperature');
 const windSpeed = document.getElementById('wind-speed');
 const feelsLikeTemperature = document.getElementById('feels-like-temeprature');
@@ -31,3 +31,13 @@ function getCityWeather(cityName) {
     .then((data) => console.log(data))
 }
 
+function displayWeather(data){
+    let {
+        dt,
+        name,
+        weather: [{ icon, description}],
+        main: { temp, feels_like, humidity },
+        wind: { speed },
+        sys: { sunrise, sunset },
+     } = data
+}
