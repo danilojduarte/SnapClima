@@ -1,6 +1,6 @@
 
 //Interação
-const citySearchBar = document.getElementById('header-city-search-bar');
+const citySearchInput = document.getElementById('city-search-input');
 const citySearchButton = document.getElementById('city-search-button');
 
 //Exibição
@@ -14,3 +14,7 @@ const feelsLikeTemperature = document.getElementById('feels-like-temeprature');
 const currentHumidity = document.getElementById('current-humidity');
 const sunriseTime = document.getElementById('sunrise-time');
 const sunsetTime = document.getElementById('sunset-time');
+
+citySearchButton.addEventListener( "click", () => {
+    console.log(citySearchInput.value)
+})
