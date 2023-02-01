@@ -21,13 +21,20 @@
 <body>
     <header class="header">
         <div class="header-city-search-bar">
-            <input class="header-input" type="text" placeholder="Temperatura de qual cidade">
-            <button class="header-button">
+            <input 
+            class="header-input" 
+            id="city-search-input"
+            type="text" 
+            placeholder="Temperatura de qual cidade">
+            <button 
+            class="header-button" 
+            id="city-search-button">
+
                 <img class="header-img" src="img/search-icon.svg" alt="icon de uma lupa">
             </button>
         </div>
-        <div class="header-current-data">...</div>
-        <div class="header-city-name">...</div>
+        <div class="header-current-data" id="current-date">...</div>
+        <div class="header-city-name" id="city-name">...</div>
     </header>
 
     <section class="current-temperature">
