@@ -23,12 +23,14 @@ citySearchButton.addEventListener( "click", () => {
     getCityWeather(cityName)
 })
 
-//
+
+
+
 
 function getCityWeather(cityName) {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&lang=pt_br&appid=${api_key}`)
     .then((response) => response.json())
-    .then((data) => console.log(data))
+    .then((data) => displayWeather(data))
 }
 
 function displayWeather(data){
@@ -41,8 +43,9 @@ function displayWeather(data){
         sys: { sunrise, sunset },
      } = data
 
-     currentDate.text.Content = dt
+     currentDate.textContent = dt;
      cityName.textContent = name;
+     weatherIcon.src=`img/${icon}.svg`
 
      weatherDescription.textContent = description;
      currentTemperature.textContent = temp;
