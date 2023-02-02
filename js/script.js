@@ -40,4 +40,7 @@ function displayWeather(data){
         wind: { speed },
         sys: { sunrise, sunset },
      } = data
+
+     currentDate.text.Content = dt
+     cityName.textContent = name;
 }
