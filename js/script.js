@@ -43,4 +43,12 @@ function displayWeather(data){
 
      currentDate.text.Content = dt
      cityName.textContent = name;
+
+     weatherDescription.textContent = description;
+     currentTemperature.textContent = temp;
+     windSpeed.textContent = speed;
+     feelsLikeTemperature.textContent = feels_like;
+     currentHumidity.textContent = humidity;
+     sunriseTime.textContent = sunrise;
+     sunsetTime.textContent = sunset;
 }
