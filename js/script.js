@@ -32,11 +32,18 @@ navigator.geolocation.getCurrentPosition(
       .then((data) => displayWeather(data));
   },
   (err) => {
+    if (err.code === 1) {
+    alert("Geolocalização negada pelo usúario, busque manualmente por uma cidade através da barra de pesquisa.")
+    } else {
     console.log(err);
+    }
   }
 );
 
 function getCityWeather(cityName) {
+
+    weatherIcon.src = `img/loading-icon.svg`;
+
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&lang=pt_br&appid=${api_key}`
   )
@@ -54,7 +61,7 @@ function displayWeather(data) {
     sys: { sunrise, sunset },
   } = data;
 
-  currentDate.textContent = dt;
+  currentDate.textContent = formatDate(dt);
   cityName.textContent = name;
   weatherIcon.src = `img/${icon}.svg`;
 
@@ -65,4 +72,10 @@ function displayWeather(data) {
   currentHumidity.textContent = humidity;
   sunriseTime.textContent = sunrise;
   sunsetTime.textContent = sunset;
+}
+
+function formatDate(epochTime) {
+    let date = new Date(epochTime * 1000)
+    let formatDate = date.toLocaleDateString('pt-BR', { month: "long", day: 'numeric'})
+    return `Hoje, ${formatDate}`
 }
