@@ -26,10 +26,12 @@ navigator.geolocation.getCurrentPosition(
     let lat = position.coords.latitude
     let lon = position.coords.longitude
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=pt_br&appid=${api_key}`
-    )
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=pt_br&appid=${api_key}`)
       .then((response) => response.json())
       .then((data) => displayWeather(data));
+
+      getCurrentLocationWeather(lat, lon)
+
   },
   (err) => {
     if (err.code === 1) {
@@ -39,6 +41,14 @@ navigator.geolocation.getCurrentPosition(
     }
   }
 );
+
+
+function getCurrentLocationWeather(lat, lon) {
+    fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=pt_br&appid=${api_key}`)
+        .then((response) => response.json())
+        .then((data) => displayWeather(data));
+}
 
 function getCityWeather(cityName) {
 
@@ -66,16 +76,23 @@ function displayWeather(data) {
   weatherIcon.src = `img/${icon}.svg`;
 
   weatherDescription.textContent = description;
-  currentTemperature.textContent = temp;
-  windSpeed.textContent = speed;
-  feelsLikeTemperature.textContent = feels_like;
-  currentHumidity.textContent = humidity;
-  sunriseTime.textContent = sunrise;
-  sunsetTime.textContent = sunset;
-}
+  currentTemperature.textContent = `${Math.round(temp)}ºC`;
+  windSpeed.textContent = `${Math.round(speed * 3.6)}Km`;
+  feelsLikeTemperature.textContent = `${Math.round(feels_like)}ºC`;
+  currentHumidity.textContent = `${humidity}%`;
+  sunriseTime.textContent = formaTime(sunrise);
+  sunsetTime.textContent = formaTime(sunset);
+}   
 
 function formatDate(epochTime) {
     let date = new Date(epochTime * 1000)
     let formatDate = date.toLocaleDateString('pt-BR', { month: "long", day: 'numeric'})
     return `Hoje, ${formatDate}`
+}
+
+function formaTime(epochTime) {
+    let date = new Date(epochTime * 1000)
+    let hours = date.getHours()
+    let minutes = date.getMinutes()
+    return `${hours}:${minutes}`
 }
